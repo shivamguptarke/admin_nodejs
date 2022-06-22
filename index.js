@@ -7,7 +7,7 @@ const app = express();
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-mongoose.connect('mongodb://localhost:27017/testAdminDB');
+//mongoose.connect('mongodb://localhost:27017/testAdminDB');
 
 
 app.listen(process.env.PORT || 3000, console.log("server is up and running at 3000"));
