@@ -10,7 +10,7 @@ app.use(express.static("public"));
 mongoose.connect('mongodb://localhost:27017/testAdminDB');
 
 
-app.listen(3000, console.log("server is up and running at 3000"));
+app.listen(process.env.PORT || 3000, console.log("server is up and running at 3000"));
 
 app.get("/", (req, res) => {
     res.redirect("index.html");
