@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const ejs = require('ejs');
-const Product = require('../mongo_app/Schema.js');
+const Product = require(__dirname + '/Schema.js');
 
 const multer = require('multer');
 
