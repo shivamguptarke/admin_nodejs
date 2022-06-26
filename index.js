@@ -29,7 +29,7 @@ mongoose.connect('mongodb+srv://newuser:newuser@cluster0.dark2.mongodb.net/hello
 const Cat = mongoose.model('Cat', { name: String });
 
 const kitty = new Cat({ name: 'kitty kitty meow from server' });
-kitty.save().then(() => console.log('meow' + __dirname));
+kitty.save().then(() => console.log("meow"));
 
 
 app.listen(process.env.PORT || 3000, console.log("server is up and running at 3000"));
@@ -43,7 +43,15 @@ app.get("/dashboard", (req, res) => {
 })
 
 app.get("/products", (req, res) => {
-    res.render("products");
+    Product.find({}, function(err, products){
+        if (err){
+            console.log(err);
+        }
+        else{
+            res.render("products", {loadProducts: products});
+            console.log(products);
+        } 
+    });
 })
 
 
