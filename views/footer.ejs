@@ -66,5 +66,15 @@
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    <script>
+      $(window).on('load', function(){
+          var url = window.location.href;
+          $('li').find('.active').removeClass('active');
+          $('li a').filter(function(){
+              return this.href == url;
+          }).parent().addClass('active');
+      });
+    </script>
   </body>
 </html>
